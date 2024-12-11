@@ -61,7 +61,7 @@ void setup(void)
 void loop()
 {
 	// Envia pacotes
-	if (Serial.available)
+	if (Serial.available() > 0)
 	{
 		udp.beginPacket(serverIP, serverPort);
 		udp.write(Serial.readString().c_str());

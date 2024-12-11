@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoFinal
@@ -34,20 +35,36 @@ namespace ProjetoFinal
 
 		private void AtualizarValores(float humidadeSolo, float humidadeAr, float temperaturaAr, float qualidadeAr)
 		{
-			label_humSolo.Text = humidadeSolo.ToString("F1");
-			label_humAr.Text = humidadeAr.ToString("F1");
-			label_tempAr.Text = temperaturaAr.ToString("F1");
-			label_qualidadeAr.Text = qualidadeAr.ToString("F1");
+			Invoke(new Action(() => 
+			{
+				label_humSolo.Text = humidadeSolo.ToString("F1");
+				label_humAr.Text = humidadeAr.ToString("F1");
+				label_tempAr.Text = temperaturaAr.ToString("F1");
+				label_qualidadeAr.Text = qualidadeAr.ToString("F1");
+			}));
 		}
 
 		private void ButtonClickHandler(object sender, EventArgs e)
 		{
 			var button = (Button)sender;
 
+			Task.Run(async () =>
+			{
+				Invoke(new Action(() =>
+				{
+					button.Enabled = false;
+				}));
+				await Task.Delay(5_000);
+				Invoke(new Action(() =>
+				{
+					button.Enabled = true;
+				}));
+			});
+
 			_ledStateManager.ToggleState(button);
 			var action = _ledStateManager.GetLedAction(button);
 
-			_udp.AddMessage(action);
+			_udp.AddMessage(action + ";");
 		}
 	}
 }

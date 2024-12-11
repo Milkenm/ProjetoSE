@@ -10,7 +10,7 @@ namespace ProjetoFinal
 {
 	public class UDP
 	{
-		private UdpClient _client = new UdpClient();
+		private UdpClient _client = new UdpClient(12345);
 		private Stack<string> _toSend = new Stack<string>();
 
 		public event Action<string> OnDataReceived;
@@ -18,6 +18,7 @@ namespace ProjetoFinal
 		public void StartServer(ushort localPort)
 		{
 			var localEndPoint = new IPEndPoint(IPAddress.Any, localPort);
+			
 			Task.Run(() =>
 			{
 				try

@@ -1,4 +1,6 @@
-﻿namespace ProjetoFinal
+﻿using System.Globalization;
+
+namespace ProjetoFinal
 {
 	public static class DataParser
 	{
@@ -13,14 +15,17 @@
 
 			try
 			{
-				var splitData = data.Split(';');
-				var latestData = splitData[splitData.Length - 1];
+                var splitData = data.Split(';');
+				var latestData = splitData[splitData.Length - 2];
+				latestData = latestData.Replace("\r", "").Replace("\n", "");
 				var dataValues = latestData.Split(',');
 
 				if (dataValues.Length < 4)
 				{
 					return false;
 				}
+
+				CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 
 				parsedData.HumidadeSolo = float.Parse(dataValues[0]);
 				parsedData.HumidadeAr = float.Parse(dataValues[1]);
