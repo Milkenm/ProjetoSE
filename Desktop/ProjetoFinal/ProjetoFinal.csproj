@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataParser.cs" />
     <Compile Include="LedStateManager.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

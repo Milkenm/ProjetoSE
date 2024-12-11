@@ -28,24 +28,16 @@ namespace ProjetoFinal
 
 		private void HandleReceivedData(string data)
 		{
-			var splitData = data.Split(';');
-			var latestData = splitData[splitData.Length - 1];
-			var dataValues = latestData.Split(',');
-
-			var humidadeSolo = float.Parse(dataValues[0]);
-			var humidadeAr = float.Parse(dataValues[1]);
-			var temperaturaAr = float.Parse(dataValues[2]);
-			var qualidadeAr = float.Parse(dataValues[3]);
-
-			AtualizarValores(humidadeSolo, humidadeAr, temperaturaAr, qualidadeAr);
+			DataParser.TryDeserialize(data, out var dataValues);
+			AtualizarValores(dataValues.HumidadeSolo, dataValues.HumidadeAr, dataValues.TemperaturaAr, dataValues.QualidadeAr);
 		}
 
 		private void AtualizarValores(float humidadeSolo, float humidadeAr, float temperaturaAr, float qualidadeAr)
 		{
-			label_humSolo.Text = humidadeSolo.ToString();
-			label_humAr.Text = humidadeAr.ToString();
-			label_tempAr.Text = temperaturaAr.ToString();
-			label_qualidadeAr.Text = qualidadeAr.ToString();
+			label_humSolo.Text = humidadeSolo.ToString("F1");
+			label_humAr.Text = humidadeAr.ToString("F1");
+			label_tempAr.Text = temperaturaAr.ToString("F1");
+			label_qualidadeAr.Text = qualidadeAr.ToString("F1");
 		}
 
 		private void ButtonClickHandler(object sender, EventArgs e)
