@@ -10,7 +10,7 @@ namespace ProjetoFinal
 {
 	public class UDP
 	{
-		private UdpClient _client = new UdpClient( 12345 );
+		private UdpClient _client = new UdpClient( 12346 );
 		private Stack<string> _toSend = new Stack<string>();
 
 		public event Action<string> OnDataReceived;

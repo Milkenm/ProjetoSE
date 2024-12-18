@@ -1,19 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjetoFinal
+namespace SimuladorArduino
 {
 	internal static class Program
 	{
 		/// <summary>
-		/// Ponto de entrada principal para o aplicativo.
+		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		private static void Main()
+		static void Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault( false );
-			Application.Run( new Main() );
+			Application.Run( new Arduino() );
 		}
 	}
 }

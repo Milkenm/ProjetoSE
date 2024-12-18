@@ -28,150 +28,244 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.button_led1 = new System.Windows.Forms.Button();
+			this.button_ac = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label_qualidadeAr = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label_tempAr = new System.Windows.Forms.Label();
+			this.button_rega = new System.Windows.Forms.Button();
+			this.button_alarme = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.textBox_qualidadeAr = new System.Windows.Forms.TextBox();
+			this.textBox_temperaturaAr = new System.Windows.Forms.TextBox();
+			this.textBox_humidadeAr = new System.Windows.Forms.TextBox();
+			this.textBox_humidadeSolo = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.label_humSolo = new System.Windows.Forms.Label();
-			this.button_led2 = new System.Windows.Forms.Button();
-			this.button_led3 = new System.Windows.Forms.Button();
-			this.label_humAr = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.button_configurar = new System.Windows.Forms.Button();
+			this.radio_automatico = new System.Windows.Forms.RadioButton();
+			this.radio_manual = new System.Windows.Forms.RadioButton();
+			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// button_led1
+			// button_ac
 			// 
-			this.button_led1.Location = new System.Drawing.Point(54, 164);
-			this.button_led1.Margin = new System.Windows.Forms.Padding(2);
-			this.button_led1.Name = "button_led1";
-			this.button_led1.Size = new System.Drawing.Size(66, 52);
-			this.button_led1.TabIndex = 0;
-			this.button_led1.Text = "Toggle LED 1";
-			this.button_led1.UseVisualStyleBackColor = true;
-			this.button_led1.Click += new System.EventHandler(this.ButtonClickHandler);
+			this.button_ac.BackColor = System.Drawing.Color.IndianRed;
+			this.button_ac.Location = new System.Drawing.Point(6, 84);
+			this.button_ac.Margin = new System.Windows.Forms.Padding(2);
+			this.button_ac.Name = "button_ac";
+			this.button_ac.Size = new System.Drawing.Size(66, 52);
+			this.button_ac.TabIndex = 0;
+			this.button_ac.Text = "A/C";
+			this.button_ac.UseVisualStyleBackColor = false;
+			this.button_ac.Click += new System.EventHandler(this.ButtonClickHandler);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(53, 46);
+			this.label1.Location = new System.Drawing.Point(31, 26);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(68, 13);
+			this.label1.Size = new System.Drawing.Size(86, 13);
 			this.label1.TabIndex = 2;
-			this.label1.Text = "Qualidade Ar";
-			// 
-			// label_qualidadeAr
-			// 
-			this.label_qualidadeAr.AutoSize = true;
-			this.label_qualidadeAr.Location = new System.Drawing.Point(81, 79);
-			this.label_qualidadeAr.Name = "label_qualidadeAr";
-			this.label_qualidadeAr.Size = new System.Drawing.Size(13, 13);
-			this.label_qualidadeAr.TabIndex = 3;
-			this.label_qualidadeAr.Text = "0";
+			this.label1.Text = "Qualidade do Ar:";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(186, 46);
+			this.label3.Location = new System.Drawing.Point(47, 52);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(74, 13);
+			this.label3.Size = new System.Drawing.Size(70, 13);
 			this.label3.TabIndex = 4;
-			this.label3.Text = "Temp/Hum Ar";
+			this.label3.Text = "Temperatura:";
 			// 
-			// label_tempAr
+			// button_rega
 			// 
-			this.label_tempAr.AutoSize = true;
-			this.label_tempAr.Location = new System.Drawing.Point(217, 79);
-			this.label_tempAr.Name = "label_tempAr";
-			this.label_tempAr.Size = new System.Drawing.Size(13, 13);
-			this.label_tempAr.TabIndex = 5;
-			this.label_tempAr.Text = "0";
+			this.button_rega.BackColor = System.Drawing.Color.IndianRed;
+			this.button_rega.Location = new System.Drawing.Point(76, 84);
+			this.button_rega.Margin = new System.Windows.Forms.Padding(2);
+			this.button_rega.Name = "button_rega";
+			this.button_rega.Size = new System.Drawing.Size(66, 52);
+			this.button_rega.TabIndex = 9;
+			this.button_rega.Text = "Rega";
+			this.button_rega.UseVisualStyleBackColor = false;
+			this.button_rega.Click += new System.EventHandler(this.ButtonClickHandler);
+			// 
+			// button_alarme
+			// 
+			this.button_alarme.BackColor = System.Drawing.Color.IndianRed;
+			this.button_alarme.Location = new System.Drawing.Point(146, 84);
+			this.button_alarme.Margin = new System.Windows.Forms.Padding(2);
+			this.button_alarme.Name = "button_alarme";
+			this.button_alarme.Size = new System.Drawing.Size(66, 52);
+			this.button_alarme.TabIndex = 11;
+			this.button_alarme.Text = "Alarme";
+			this.button_alarme.UseVisualStyleBackColor = false;
+			this.button_alarme.Click += new System.EventHandler(this.ButtonClickHandler);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(59, 78);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(58, 13);
+			this.label2.TabIndex = 14;
+			this.label2.Text = "Humidade:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(20, 104);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(97, 13);
+			this.label4.TabIndex = 15;
+			this.label4.Text = "Humidade do Solo:";
+			// 
+			// textBox_qualidadeAr
+			// 
+			this.textBox_qualidadeAr.Location = new System.Drawing.Point(123, 23);
+			this.textBox_qualidadeAr.Name = "textBox_qualidadeAr";
+			this.textBox_qualidadeAr.ReadOnly = true;
+			this.textBox_qualidadeAr.Size = new System.Drawing.Size(121, 20);
+			this.textBox_qualidadeAr.TabIndex = 16;
+			// 
+			// textBox_temperaturaAr
+			// 
+			this.textBox_temperaturaAr.Location = new System.Drawing.Point(123, 49);
+			this.textBox_temperaturaAr.Name = "textBox_temperaturaAr";
+			this.textBox_temperaturaAr.ReadOnly = true;
+			this.textBox_temperaturaAr.Size = new System.Drawing.Size(121, 20);
+			this.textBox_temperaturaAr.TabIndex = 17;
+			// 
+			// textBox_humidadeAr
+			// 
+			this.textBox_humidadeAr.Location = new System.Drawing.Point(123, 75);
+			this.textBox_humidadeAr.Name = "textBox_humidadeAr";
+			this.textBox_humidadeAr.ReadOnly = true;
+			this.textBox_humidadeAr.Size = new System.Drawing.Size(121, 20);
+			this.textBox_humidadeAr.TabIndex = 18;
+			// 
+			// textBox_humidadeSolo
+			// 
+			this.textBox_humidadeSolo.Location = new System.Drawing.Point(123, 101);
+			this.textBox_humidadeSolo.Name = "textBox_humidadeSolo";
+			this.textBox_humidadeSolo.ReadOnly = true;
+			this.textBox_humidadeSolo.Size = new System.Drawing.Size(121, 20);
+			this.textBox_humidadeSolo.TabIndex = 19;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(320, 46);
+			this.label5.Location = new System.Drawing.Point(6, 23);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(79, 13);
-			this.label5.TabIndex = 6;
-			this.label5.Text = "Humidade Solo";
+			this.label5.Size = new System.Drawing.Size(37, 13);
+			this.label5.TabIndex = 20;
+			this.label5.Text = "Modo:";
 			// 
-			// label_humSolo
+			// groupBox1
 			// 
-			this.label_humSolo.AutoSize = true;
-			this.label_humSolo.Location = new System.Drawing.Point(353, 79);
-			this.label_humSolo.Name = "label_humSolo";
-			this.label_humSolo.Size = new System.Drawing.Size(13, 13);
-			this.label_humSolo.TabIndex = 7;
-			this.label_humSolo.Text = "0";
+			this.groupBox1.Controls.Add(this.textBox_qualidadeAr);
+			this.groupBox1.Controls.Add(this.label1);
+			this.groupBox1.Controls.Add(this.textBox_humidadeSolo);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.textBox_humidadeAr);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.textBox_temperaturaAr);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Location = new System.Drawing.Point(11, 12);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(265, 145);
+			this.groupBox1.TabIndex = 21;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Sensores";
 			// 
-			// button_led2
+			// groupBox2
 			// 
-			this.button_led2.Location = new System.Drawing.Point(190, 164);
-			this.button_led2.Margin = new System.Windows.Forms.Padding(2);
-			this.button_led2.Name = "button_led2";
-			this.button_led2.Size = new System.Drawing.Size(66, 52);
-			this.button_led2.TabIndex = 9;
-			this.button_led2.Text = "Toggle LED 2";
-			this.button_led2.UseVisualStyleBackColor = true;
-			this.button_led2.Click += new System.EventHandler(this.ButtonClickHandler);
+			this.groupBox2.Controls.Add(this.button_configurar);
+			this.groupBox2.Controls.Add(this.radio_automatico);
+			this.groupBox2.Controls.Add(this.radio_manual);
+			this.groupBox2.Controls.Add(this.button_ac);
+			this.groupBox2.Controls.Add(this.button_rega);
+			this.groupBox2.Controls.Add(this.label5);
+			this.groupBox2.Controls.Add(this.button_alarme);
+			this.groupBox2.Location = new System.Drawing.Point(282, 12);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(218, 145);
+			this.groupBox2.TabIndex = 22;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Controlos";
 			// 
-			// button_led3
+			// button_configurar
 			// 
-			this.button_led3.Location = new System.Drawing.Point(326, 164);
-			this.button_led3.Margin = new System.Windows.Forms.Padding(2);
-			this.button_led3.Name = "button_led3";
-			this.button_led3.Size = new System.Drawing.Size(66, 52);
-			this.button_led3.TabIndex = 11;
-			this.button_led3.Text = "Toggle LED 3";
-			this.button_led3.UseVisualStyleBackColor = true;
-			this.button_led3.Click += new System.EventHandler(this.ButtonClickHandler);
+			this.button_configurar.Location = new System.Drawing.Point(127, 10);
+			this.button_configurar.Name = "button_configurar";
+			this.button_configurar.Size = new System.Drawing.Size(85, 23);
+			this.button_configurar.TabIndex = 23;
+			this.button_configurar.Text = "Configurar";
+			this.button_configurar.UseVisualStyleBackColor = true;
+			this.button_configurar.Click += new System.EventHandler(this.button_configurar_Click);
 			// 
-			// label_humAr
+			// radio_automatico
 			// 
-			this.label_humAr.AutoSize = true;
-			this.label_humAr.Location = new System.Drawing.Point(217, 97);
-			this.label_humAr.Name = "label_humAr";
-			this.label_humAr.Size = new System.Drawing.Size(13, 13);
-			this.label_humAr.TabIndex = 13;
-			this.label_humAr.Text = "0";
+			this.radio_automatico.AutoSize = true;
+			this.radio_automatico.Location = new System.Drawing.Point(49, 44);
+			this.radio_automatico.Name = "radio_automatico";
+			this.radio_automatico.Size = new System.Drawing.Size(78, 17);
+			this.radio_automatico.TabIndex = 22;
+			this.radio_automatico.Text = "Automático";
+			this.radio_automatico.UseVisualStyleBackColor = true;
+			this.radio_automatico.CheckedChanged += new System.EventHandler(this.radio_automatico_CheckedChanged);
+			// 
+			// radio_manual
+			// 
+			this.radio_manual.AutoSize = true;
+			this.radio_manual.Checked = true;
+			this.radio_manual.Location = new System.Drawing.Point(49, 21);
+			this.radio_manual.Name = "radio_manual";
+			this.radio_manual.Size = new System.Drawing.Size(60, 17);
+			this.radio_manual.TabIndex = 21;
+			this.radio_manual.TabStop = true;
+			this.radio_manual.Text = "Manual";
+			this.radio_manual.UseVisualStyleBackColor = true;
 			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(450, 257);
-			this.Controls.Add(this.label_humAr);
-			this.Controls.Add(this.button_led3);
-			this.Controls.Add(this.button_led2);
-			this.Controls.Add(this.label_humSolo);
-			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label_tempAr);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label_qualidadeAr);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.button_led1);
+			this.ClientSize = new System.Drawing.Size(511, 168);
+			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Main";
-			this.Text = "Main";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.Main_Load);
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button_led1;
+        private System.Windows.Forms.Button button_ac;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label_qualidadeAr;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label_tempAr;
+		private System.Windows.Forms.Button button_rega;
+		private System.Windows.Forms.Button button_alarme;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox textBox_qualidadeAr;
+		private System.Windows.Forms.TextBox textBox_temperaturaAr;
+		private System.Windows.Forms.TextBox textBox_humidadeAr;
+		private System.Windows.Forms.TextBox textBox_humidadeSolo;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label_humSolo;
-		private System.Windows.Forms.Button button_led2;
-		private System.Windows.Forms.Button button_led3;
-		private System.Windows.Forms.Label label_humAr;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.RadioButton radio_automatico;
+		private System.Windows.Forms.RadioButton radio_manual;
+		private System.Windows.Forms.Button button_configurar;
 	}
 }
 
