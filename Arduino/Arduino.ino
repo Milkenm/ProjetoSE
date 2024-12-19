@@ -4,10 +4,12 @@
 #define PINO_SOLO A0
 #define PINO_DHT 2
 #define PINO_MQ2 A1
+#define PINO_LUZ A2
 
 #define PINO_LED1 4
 #define PINO_LED2 5
 #define PINO_LED3 6
+#define PINO_LED4 7
 
 DHT dht(PINO_DHT, DHT11);
 MQUnifiedsensor MQ2("Arduino UNO", 5, 10, PINO_MQ2, "MQ-2");
@@ -68,6 +70,14 @@ String command = part;
       {
         digitalWrite(PINO_LED3, LOW);
       }
+      else if (command.startsWith("L4"))
+      {
+        digitalWrite(PINO_LED4, HIGH);
+      }
+      else if (command.startsWith("D4"))
+      {
+        digitalWrite(PINO_LED4, LOW);
+      }
     
     startIndex = semicolonIndex + 1;  // Move the startIndex to the next part
   }
@@ -102,6 +112,14 @@ String command = lastPart;
       else if (command.startsWith("D3")) 
       {
         digitalWrite(PINO_LED3, LOW);
+      }
+      else if (command.startsWith("L4"))
+      {
+        digitalWrite(PINO_LED4, HIGH);
+      }
+      else if (command.startsWith("D4"))
+      {
+        digitalWrite(PINO_LED4, LOW);
       }
   }
 }
@@ -142,7 +160,9 @@ void loop()
 	MQ2.update();
 	float qualidadeAr = MQ2.readSensor();
 
-	Serial.println(String(humidadeSolo) + "," + String(humidadeAr) + "," + String(temperaturaAr) + "," + String(qualidadeAr) + ";");
+  float luminosidade = analogRead(PINO_LUZ);
+
+	Serial.println(String(humidadeSolo) + "," + String(humidadeAr) + "," + String(temperaturaAr) + "," + String(qualidadeAr) + "," + String(luminosidade) + ";");
   
 	if (Serial.available() > 0) 
 	{
@@ -156,13 +176,8 @@ void loop()
       String command = sPtr[n];
 
       Serial.println(command);
-
-      
     }
-
-      
-    }
+  }
 	
-
 	delay(1000);
 }
