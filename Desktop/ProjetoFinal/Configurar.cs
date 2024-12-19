@@ -18,6 +18,7 @@ namespace ProjetoFinal
 			textBox_minHumidade.Text = Settings.Default.MinHumidadeAr.ToString();
 			textBox_minTemperatura.Text = Settings.Default.MinTemperatura.ToString();
 			textBox_maxTemperatura.Text = Settings.Default.MaxTemperatura.ToString();
+			textBox_minLuminosidade.Text = Settings.Default.MinLuminosidade.ToString();
 		}
 
 		private void button_guardar_Click( object sender, EventArgs e )
@@ -26,6 +27,7 @@ namespace ProjetoFinal
 			Settings.Default.MinHumidadeAr = Convert.ToSingle( textBox_minHumidade.Text );
 			Settings.Default.MinTemperatura = Convert.ToSingle( textBox_minTemperatura.Text );
 			Settings.Default.MaxTemperatura = Convert.ToSingle( textBox_maxTemperatura.Text );
+			Settings.Default.MinLuminosidade = Convert.ToSingle( textBox_minLuminosidade.Text );
 			Settings.Default.Save();
 
 			Close();

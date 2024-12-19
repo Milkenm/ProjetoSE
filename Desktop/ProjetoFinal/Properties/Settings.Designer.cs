@@ -82,5 +82,17 @@ namespace ProjetoFinal.Properties {
                 this["MinHumidadeSolo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20000")]
+        public float MinLuminosidade {
+            get {
+                return ((float)(this["MinLuminosidade"]));
+            }
+            set {
+                this["MinLuminosidade"] = value;
+            }
+        }
     }
 }

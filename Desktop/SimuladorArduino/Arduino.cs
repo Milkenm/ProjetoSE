@@ -49,6 +49,12 @@ namespace SimuladorArduino
 					case "D3":
 						panel_alarme.BackColor = Color.WhiteSmoke;
 						break;
+					case "L4":
+						panel_luz.BackColor = Color.OliveDrab;
+						break;
+					case "D4":
+						panel_luz.BackColor = Color.WhiteSmoke;
+						break;
 				}
 			}
 		}
@@ -59,8 +65,9 @@ namespace SimuladorArduino
 			var temperatura = Convert.ToSingle( textBox_temperatura.Text );
 			var humidade = Convert.ToSingle( textBox_humidade.Text );
 			var humidadeSolo = Convert.ToSingle( textBox_humidadeSolo.Text );
+			var luminosidade = Convert.ToSingle( textBox_luminosidade.Text );
 
-			var dataValues = $"{humidadeSolo},{humidade},{temperatura},{qualidadeAr};";
+			var dataValues = $"{humidadeSolo},{humidade},{temperatura},{qualidadeAr},{luminosidade};";
 			_udp.AddMessage( dataValues );
 		}
 	}

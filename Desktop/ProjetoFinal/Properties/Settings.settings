@@ -17,5 +17,8 @@
     <Setting Name="MinHumidadeSolo" Type="System.Single" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
+    <Setting Name="MinLuminosidade" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">20000</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

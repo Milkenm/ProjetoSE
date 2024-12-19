@@ -20,7 +20,8 @@ namespace ProjetoFinal
 			_ledStateManager = new LedStateManager<Dispositivo>()
 				.AddObject( Dispositivo.AC, "L1", "D1", false )
 				.AddObject( Dispositivo.Rega, "L2", "D2", false )
-				.AddObject( Dispositivo.Alarme, "L3", "D3", false );
+				.AddObject( Dispositivo.Alarme, "L3", "D3", false )
+				.AddObject( Dispositivo.Luz, "L4", "D4", false );
 
 			_modoAutomatico = new ModoAutomatico( _ledStateManager );
 			_modoAutomatico.OnStateChange += ModoAutomaticoStateChange;
@@ -37,11 +38,11 @@ namespace ProjetoFinal
 		{
 			DataParser.TryDeserialize( data, out var dataValues );
 			_modoAutomatico.Update( dataValues );
-			AtualizarValores( dataValues.HumidadeSolo, dataValues.HumidadeAr, dataValues.TemperaturaAr, dataValues.QualidadeAr );
+			AtualizarValores( dataValues.HumidadeSolo, dataValues.HumidadeAr, dataValues.TemperaturaAr, dataValues.QualidadeAr, dataValues.Luminosidade );
 			_lastDataValues = dataValues;
 		}
 
-		private void AtualizarValores( float humidadeSolo, float humidadeAr, float temperaturaAr, float qualidadeAr )
+		private void AtualizarValores( float humidadeSolo, float humidadeAr, float temperaturaAr, float qualidadeAr, float luminosidade )
 		{
 			Invoke( new Action( () =>
 			{
@@ -49,6 +50,7 @@ namespace ProjetoFinal
 				textBox_humidadeAr.Text = humidadeAr.ToString( "F1" );
 				textBox_temperaturaAr.Text = temperaturaAr.ToString( "F1" );
 				textBox_qualidadeAr.Text = qualidadeAr.ToString( "F1" );
+				textBox_luminosidade.Text = luminosidade.ToString( "F1" );
 			} ) );
 		}
 
@@ -74,6 +76,10 @@ namespace ProjetoFinal
 			else if ( button == button_alarme )
 			{
 				dispositivo = Dispositivo.Alarme;
+			}
+			else if ( button == button_luz )
+			{
+				dispositivo = Dispositivo.Luz;
 			}
 			else
 			{
@@ -118,6 +124,7 @@ namespace ProjetoFinal
 			button_ac.Enabled = !radio_automatico.Checked;
 			button_rega.Enabled = !radio_automatico.Checked;
 			button_alarme.Enabled = !radio_automatico.Checked;
+			button_luz.Enabled = !radio_automatico.Checked;
 
 			if ( _modoAutomatico.Enabled )
 			{
@@ -141,6 +148,10 @@ namespace ProjetoFinal
 				else if ( dispositivo == Dispositivo.Alarme )
 				{
 					button = button_alarme;
+				}
+				else if ( dispositivo == Dispositivo.Luz )
+				{
+					button = button_luz;
 				}
 				else
 				{

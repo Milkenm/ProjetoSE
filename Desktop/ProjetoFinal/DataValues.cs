@@ -6,5 +6,6 @@
 		public float HumidadeAr { get; set; }
 		public float TemperaturaAr { get; set; }
 		public float QualidadeAr { get; set; }
+		public float Luminosidade { get; set; }
 	}
 }

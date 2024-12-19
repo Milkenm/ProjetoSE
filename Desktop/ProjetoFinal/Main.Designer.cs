@@ -45,6 +45,9 @@
 			this.button_configurar = new System.Windows.Forms.Button();
 			this.radio_automatico = new System.Windows.Forms.RadioButton();
 			this.radio_manual = new System.Windows.Forms.RadioButton();
+			this.button_luz = new System.Windows.Forms.Button();
+			this.textBox_luminosidade = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -52,7 +55,7 @@
 			// button_ac
 			// 
 			this.button_ac.BackColor = System.Drawing.Color.IndianRed;
-			this.button_ac.Location = new System.Drawing.Point(6, 84);
+			this.button_ac.Location = new System.Drawing.Point(6, 95);
 			this.button_ac.Margin = new System.Windows.Forms.Padding(2);
 			this.button_ac.Name = "button_ac";
 			this.button_ac.Size = new System.Drawing.Size(66, 52);
@@ -82,7 +85,7 @@
 			// button_rega
 			// 
 			this.button_rega.BackColor = System.Drawing.Color.IndianRed;
-			this.button_rega.Location = new System.Drawing.Point(76, 84);
+			this.button_rega.Location = new System.Drawing.Point(76, 95);
 			this.button_rega.Margin = new System.Windows.Forms.Padding(2);
 			this.button_rega.Name = "button_rega";
 			this.button_rega.Size = new System.Drawing.Size(66, 52);
@@ -94,7 +97,7 @@
 			// button_alarme
 			// 
 			this.button_alarme.BackColor = System.Drawing.Color.IndianRed;
-			this.button_alarme.Location = new System.Drawing.Point(146, 84);
+			this.button_alarme.Location = new System.Drawing.Point(146, 95);
 			this.button_alarme.Margin = new System.Windows.Forms.Padding(2);
 			this.button_alarme.Name = "button_alarme";
 			this.button_alarme.Size = new System.Drawing.Size(66, 52);
@@ -164,6 +167,8 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.textBox_luminosidade);
 			this.groupBox1.Controls.Add(this.textBox_qualidadeAr);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.textBox_humidadeSolo);
@@ -174,13 +179,14 @@
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Location = new System.Drawing.Point(11, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(265, 145);
+			this.groupBox1.Size = new System.Drawing.Size(265, 161);
 			this.groupBox1.TabIndex = 21;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Sensores";
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.button_luz);
 			this.groupBox2.Controls.Add(this.button_configurar);
 			this.groupBox2.Controls.Add(this.radio_automatico);
 			this.groupBox2.Controls.Add(this.radio_manual);
@@ -190,14 +196,14 @@
 			this.groupBox2.Controls.Add(this.button_alarme);
 			this.groupBox2.Location = new System.Drawing.Point(282, 12);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(218, 145);
+			this.groupBox2.Size = new System.Drawing.Size(289, 161);
 			this.groupBox2.TabIndex = 22;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Controlos";
 			// 
 			// button_configurar
 			// 
-			this.button_configurar.Location = new System.Drawing.Point(127, 10);
+			this.button_configurar.Location = new System.Drawing.Point(197, 13);
 			this.button_configurar.Name = "button_configurar";
 			this.button_configurar.Size = new System.Drawing.Size(85, 23);
 			this.button_configurar.TabIndex = 23;
@@ -228,16 +234,46 @@
 			this.radio_manual.Text = "Manual";
 			this.radio_manual.UseVisualStyleBackColor = true;
 			// 
+			// button_luz
+			// 
+			this.button_luz.BackColor = System.Drawing.Color.IndianRed;
+			this.button_luz.Location = new System.Drawing.Point(216, 95);
+			this.button_luz.Margin = new System.Windows.Forms.Padding(2);
+			this.button_luz.Name = "button_luz";
+			this.button_luz.Size = new System.Drawing.Size(66, 52);
+			this.button_luz.TabIndex = 24;
+			this.button_luz.Text = "Luz";
+			this.button_luz.UseVisualStyleBackColor = false;
+			this.button_luz.Click += new System.EventHandler(this.ButtonClickHandler);
+			// 
+			// textBox_luminosidade
+			// 
+			this.textBox_luminosidade.Location = new System.Drawing.Point(123, 127);
+			this.textBox_luminosidade.Name = "textBox_luminosidade";
+			this.textBox_luminosidade.ReadOnly = true;
+			this.textBox_luminosidade.Size = new System.Drawing.Size(121, 20);
+			this.textBox_luminosidade.TabIndex = 20;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(42, 130);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(75, 13);
+			this.label6.TabIndex = 21;
+			this.label6.Text = "Luminosidade:";
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(511, 168);
+			this.ClientSize = new System.Drawing.Size(582, 185);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Main";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Sistema de controlo de estufas";
 			this.Load += new System.EventHandler(this.Main_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
@@ -266,6 +302,9 @@
 		private System.Windows.Forms.RadioButton radio_automatico;
 		private System.Windows.Forms.RadioButton radio_manual;
 		private System.Windows.Forms.Button button_configurar;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox textBox_luminosidade;
+		private System.Windows.Forms.Button button_luz;
 	}
 }
 

@@ -31,6 +31,7 @@ namespace ProjetoFinal
 				parsedData.HumidadeAr = float.Parse( dataValues[1] );
 				parsedData.TemperaturaAr = float.Parse( dataValues[2] );
 				parsedData.QualidadeAr = float.Parse( dataValues[3] );
+				parsedData.Luminosidade = float.Parse( dataValues[4] );
 				return true;
 			}
 			catch

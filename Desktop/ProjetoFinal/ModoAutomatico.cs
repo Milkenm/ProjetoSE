@@ -59,6 +59,18 @@ namespace ProjetoFinal
 			{
 				OnStateChange?.Invoke( Dispositivo.AC, false );
 			}
+
+			if ( dataValues.Luminosidade < Settings.Default.MinLuminosidade )
+			{
+				if ( !_ledStateManager.GetState( Dispositivo.Luz ) )
+				{
+					OnStateChange?.Invoke( Dispositivo.Luz, true );
+				}
+			}
+			else if ( _ledStateManager.GetState( Dispositivo.Luz ) )
+			{
+				OnStateChange?.Invoke( Dispositivo.Luz, false );
+			}
 		}
 	}
 }

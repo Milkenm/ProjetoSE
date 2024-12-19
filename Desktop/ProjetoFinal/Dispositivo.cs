@@ -5,5 +5,6 @@
 		AC,
 		Rega,
 		Alarme,
+		Luz,
 	}
 }
